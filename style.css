@@ -760,4 +760,51 @@ section.show {
   transform: translateX(0);
 }
 
+/* ✅ Hamburger button (hidden on desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
 
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #00A6FF; /* same color as your logo stroke */
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* ✅ Mobile Navigation */
+@media (max-width: 992px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: linear-gradient(90deg, #00b4ff,#0072ff);
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
+  nav a:hover{
+    color: white;
+  }
+
+  nav a {
+    padding: 10px 0;
+    color: #000; /* Make text visible on white */
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

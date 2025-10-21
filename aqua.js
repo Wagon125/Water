@@ -14,6 +14,7 @@ const observer = new IntersectionObserver(
   { threshold: 0.2 } // Adjust to trigger earlier/later
 );
 
+
 sections.forEach(section => observer.observe(section));
 
 // Scroll animations for sections and hero text
@@ -50,3 +51,17 @@ const heroObserver = new IntersectionObserver(
 );
 
 slideElements.forEach(el => heroObserver.observe(el));
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('header nav');
+
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+});
+
+function toggleMenu() {
+  const nav = document.querySelector("header nav");
+  nav.classList.toggle("active");
+}
