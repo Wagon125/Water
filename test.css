@@ -1,0 +1,267 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* BODY */
+body {
+  background: #edf4fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* MAIN CARD */
+.showcase {
+  width: 92%;
+  max-width: 1150px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.326), rgba(0, 0, 0, 0.85)),
+              url('water-bg.jpg') center/cover no-repeat;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  padding: 40px 70px 60px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* LIGHT OVERLAY FOR DEPTH */
+.showcase::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(10,60,120,0.7), rgba(5,40,90,0.5));
+  z-index: 0;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #aad9ff;
+  font-weight: 600;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #e8f5ff;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ffffff;
+}
+
+.contact {
+  border: 1.8px solid #aad9ff;
+  padding: 8px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.contact:hover {
+  background: #aad9ff;
+  color: #0b2e4e;
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 3.6rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  color: #ffffff;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  color: #e6f3ff;
+}
+
+.hero-text button {
+  padding: 14px 38px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #1b7ef2, #1470d8);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 80, 200, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-text button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 80, 200, 0.45);
+}
+
+/* HERO IMAGE */
+.hero-img img {
+  width: 280px;
+  max-width: 100%;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* FLOATING EFFECT */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 950px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-img img {
+    margin-top: 40px;
+    width: 220px;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+footer {
+  background: #0a0f1c;
+  color: #fff;
+  padding: 60px 20px 30px;
+  text-align: center;
+  position: relative;
+  margin-top: 80px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.footer-logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #00aaff;
+}
+
+.footer-logo span {
+  color: #fff;
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #00aaff;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-socials img {
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-socials img:hover {
+  transform: scale(1.1);
+  filter: brightness(0) invert(0.6) sepia(1) saturate(10) hue-rotate(180deg);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 25px;
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+/* Footer styling */
+footer {
+  background: #0a2540;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  border-top: 2px solid #1e3a8a;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Optional for smooth look */
+footer p::before {
+  content: "💧 ";
+}
